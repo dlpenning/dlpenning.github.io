@@ -1,0 +1,113 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    background-image: url('../../img/bghero.jpg');
+    background-position: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: calc(100vh - $header-height);
+
+    .panel {
+
+        width: 100%;
+        max-width: none;
+
+        background-color: rgba($bg-dark, 0.95);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (min-height: $breakpoint-height) {
+            @media screen and (min-width: $breakpoint-width) {
+                max-width: $panel-width;
+            }
+        }
+
+        .panel-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+        }
+
+        .panel-bottom {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .panel-header {
+            text-align: center;
+        }
+        
+    }
+
+}
+
+.tray {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    @media screen and (min-width: $breakpoint-width) {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+
+.button {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    text-align: center;
+
+    &:hover {
+        transform: translate(0, -1px);
+        -webkit-box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.75);
+    }   
+
+    &-primary {
+        background-color: $fg-bright;
+        color: black;
+
+        &:hover {
+            background-color: #f9fA08;
+            color: black;
+        }
+
+    }
+
+    &-secondary {
+        background-color: #242424;
+        color: $fg-bright;
+
+        &:hover {
+            background-color: #4b4b4b;
+        }
+    }
+
+    &-light {
+        background-color: #242424;
+        color: #808080;
+
+        &:hover {
+            background-color: rgb(53, 53, 53);
+        }
+    }
+}

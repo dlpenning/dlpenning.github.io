@@ -1,0 +1,34 @@
+$bg-dark: #121212;
+$fg-bright: #fff200;
+$header-height: 58px;
+$panel-width: 900px;
+$breakpoint-width: 1200px;
+$breakpoint-height: 720px;
+
+$page-margin-wide: 300px;
+
+@import 'homepage.scss';
+@import 'navbar.scss';
+
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+
+    // color: $fg-bright;
+    font-family: sans-serif;
+} 
+
+h1 {
+    color: $fg-bright;
+}
+
+.empty-seperator {
+    display: block;
+    height: 30px;
+}
+// Hello world
+
+

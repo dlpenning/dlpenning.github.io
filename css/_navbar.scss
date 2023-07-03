@@ -1,0 +1,228 @@
+
+$mobile-width: $breakpoint-width;
+
+.navbar {
+    position: sticky;
+    top: 0;
+    height: $header-height;
+    width: 100%;
+    background-color: $bg-dark;
+
+    display: flex;
+    justify-content: end;
+
+    -webkit-box-shadow: 0px -1px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px -1px 5px 3px rgba(0,0,0,0.75);
+
+    @media screen and (min-width: $mobile-width) {
+        display: grid;
+        grid-template-columns: max($page-margin-wide) 1fr max($page-margin-wide);
+        grid-template-rows: $header-height;
+        grid-template-areas: "logo center .";
+    }
+}
+
+
+.navbar-blocker {
+    @media screen and (min-width: $mobile-width) {
+        display: none;
+    }
+}
+
+.navbar-logo {
+    position: absolute;
+    height: 100%;
+
+    left: 50vw;
+    transform: translate(-50%,0);
+
+    &.navbar-logo > img {
+        height: 100%;
+    }
+
+    @media screen and (min-width: $mobile-width) {
+        position: static;
+        grid-area: logo;
+        left: 0;
+        transform: none;
+        height: 100%;
+
+        display: flex;
+        justify-content: end;
+        margin-right: 30px;
+    }
+}
+
+
+.navbar-nav {
+    display: none;
+
+    @media screen and (min-width: $mobile-width) {
+        display: block;
+        width: 100%;
+    }
+}
+
+.navbar.active {
+
+    // Desktop first design
+    @media screen and (max-width: $mobile-width) {
+        .navbar-nav {
+            position: absolute;
+            display: block;
+            left: 0;
+        
+            height: 100vh;
+            width: 100vw;
+    
+            &-content {
+    
+                position: absolute;
+                background-color: $bg-dark;
+                height: 100vh;
+                width: fit-content;
+                z-index: 3;
+            }
+    
+            &-blocker {
+                position: absolute;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.555);
+                z-index: 2;
+            }
+        }
+    
+        .navbar-hamburger {
+            position: absolute;
+            z-index: 4;
+        }
+    }
+
+}
+
+
+.navbar-nav-content {
+    @media screen and (min-width: $mobile-width) {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.nv-list, .nv-list ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media screen and (min-width: $mobile-width) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+// Navbar element
+.nv-list>li {
+
+
+    // Mobile version
+    border-bottom: 1px solid grey;
+    width: calc(100vw - 100px);
+    &>a {
+        display: inline-block;
+        padding: 10px 0;
+        padding-left: 20px;
+        padding-right: -20px;
+        width: 100%;
+    
+        font-weight: bold;
+
+    }
+    &>ul {
+        display: none;
+    }
+
+
+    // Desktop version
+    @media screen and (min-width: $mobile-width) {
+        width: auto;
+        border: none;
+        
+        // padding: 0 20px;
+        &>a {
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        // Submenu
+        &>ul {
+            display: block;
+            position: absolute;
+            top: $header-height;
+            background-color: $bg-dark;
+            -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.75);
+
+            visibility: hidden;
+
+            // Submenu link
+            &>li>a {
+                display: block;
+                padding: 10px 20px 10px 20px;
+
+                min-width: 200px;
+
+                font-weight: bold;
+                font-size: 0.8em;
+
+                &:hover {
+                    background-color: $fg-bright;
+                    color: $bg-dark;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: $fg-bright;
+
+            &>a {
+                color: $bg-dark;
+            }
+        }
+
+        &:hover>ul {
+            visibility: visible;
+        }
+    }
+}
+
+.nv-list a {
+    color: $fg-bright;
+    text-decoration: none;
+}
+
+.navbar-hamburger {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 10px;
+
+    @media screen and (min-width: $mobile-width) {
+        display: none;
+    }
+}
+
+.ham {
+    display: block;
+    height: 2px;
+    width: 30px;
+    background-color: $fg-bright;
+}
