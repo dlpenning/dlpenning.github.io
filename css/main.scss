@@ -29,6 +29,24 @@ h1 {
     display: block;
     height: 30px;
 }
+
+.preload {
+    display: block;
+    width: 0;
+    height: 0;
+    
+    .preload-0 {
+        background-image: url('../../img/bghero0.jpg');
+    }
+
+    .preload-1 {
+        background-image: url('../../img/bghero1.jpg');
+    }
+
+    .preload-2 {
+        background-image: url('../../img/bghero2.jpg');
+    }
+}
 // Hello world
 
 

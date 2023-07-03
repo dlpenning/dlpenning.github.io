@@ -133,9 +133,9 @@
     grid-area: logo;
     left: 0;
     transform: none;
-    height: 100%;
+    height: 130px;
     display: flex;
-    justify-content: end;
+    justify-content: start;
     margin-right: 30px;
   }
 }
@@ -299,6 +299,21 @@ h1 {
 .empty-seperator {
   display: block;
   height: 30px;
+}
+
+.preload {
+  display: block;
+  width: 0;
+  height: 0;
+}
+.preload .preload-0 {
+  background-image: url("../../img/bghero0.jpg");
+}
+.preload .preload-1 {
+  background-image: url("../../img/bghero1.jpg");
+}
+.preload .preload-2 {
+  background-image: url("../../img/bghero2.jpg");
 }
 
 /*# sourceMappingURL=style.css.map */

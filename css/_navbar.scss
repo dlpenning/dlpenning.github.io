@@ -46,10 +46,10 @@ $mobile-width: $breakpoint-width;
         grid-area: logo;
         left: 0;
         transform: none;
-        height: 100%;
+        height: 130px;
 
         display: flex;
-        justify-content: end;
+        justify-content: start;
         margin-right: 30px;
     }
 }
