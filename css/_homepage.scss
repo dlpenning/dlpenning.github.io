@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: end;
 
-    background-image: url('../../img/bghero.jpg');
+    background-image: url('../../img/bghero0.jpg');
+    transition: background-image 3s;
     background-position: center;
     background-color: black;
     background-repeat: no-repeat;

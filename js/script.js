@@ -19,3 +19,15 @@ blocker.addEventListener('click', e => {
         navbar.classList.add('active')
 
 })
+
+const hero = document.getElementById('hero_main')
+
+let counter = 0
+
+const interval = setInterval(() => {
+    counter++
+    if (counter > 2)
+        counter = 0
+    hero.style.backgroundImage = `url('../../img/bghero${counter}.jpg')`;
+}, 10000)
+

@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  background-image: url("../../img/bghero.jpg");
+  background-image: url("../../img/bghero0.jpg");
+  transition: background-image 3s;
   background-position: center;
   background-color: black;
   background-repeat: no-repeat;
@@ -20,7 +21,7 @@
 }
 @media screen and (min-height: 720px) and (min-width: 1200px) {
   .hero .panel {
-    max-width: 900px;
+    max-width: 666px;
   }
 }
 .hero .panel .panel-center {
